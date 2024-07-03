@@ -53,7 +53,7 @@ def main():
 
     num_processes = cpu_count()
     chunk_size = total_frames // num_processes
-    interval = 5  # Extract every third frame
+    interval = 5  # Extract every fifth frame
 
     pool = Pool(processes=num_processes)
     tasks = []
