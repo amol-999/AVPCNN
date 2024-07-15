@@ -7,10 +7,11 @@ import cv2
 import os
 from multiprocessing import Pool, cpu_count
 import time
+import math
 
 
 # Path to the video file
-video_path = 'DataCollection/test_vid.MP4'
+video_path = 'DataCollection/DSCN0160.MP4'
 
 # Create a directory to save frames
 output_dir = 'DataCollection/extracted_frames'
@@ -53,7 +54,7 @@ def main():
 
     num_processes = cpu_count()
     chunk_size = total_frames // num_processes
-    interval = 5  # Extract every fifth frame
+    interval = 1  # Extract every fifth frame
 
     pool = Pool(processes=num_processes)
     tasks = []

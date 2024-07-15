@@ -7,7 +7,7 @@ import os
 detector = dlib.get_frontal_face_detector()
 
 # Get the directory of the current script
-script_dir = 'DataCollection/extracted_frames'
+script_dir = 'DataCollection'
 predictor_path = os.path.join(script_dir, 'shape_predictor_68_face_landmarks.dat')
 
 predictor = dlib.shape_predictor(predictor_path)
@@ -47,7 +47,7 @@ def get_head_pose(shape):
 
     return (rotation_vector, translation_vector)
 
-cap = cv2.VideoCapture('./DataCollection/test_vid.MP4')
+cap = cv2.VideoCapture('./DataCollection/DSCN0163.MP4')
 
 
 frame_count = 0
@@ -63,9 +63,9 @@ while frames_to_read:
         continue
     if not ret:
         break
-    if not ret or frame is None:
-        print("No frame available. Check the video file.")
-        continue
+    # if not ret or frame is None:
+    #     print("No frame available. Check the video file.")
+    #     break
     cv2.imshow('Frame', frame)
     rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     print(rgb)

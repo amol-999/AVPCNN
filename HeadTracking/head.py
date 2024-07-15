@@ -21,6 +21,9 @@ frame_number = 0
 
 for frame_filename in sorted(os.listdir(input_dir)):
     frame = cv2.imread(os.path.join(input_dir, frame_filename))
+    if frame is None:
+        print(f"Could not read image {frame_filename}")
+        continue
 
     # Convert the BGR image to RGB before processing
     results = face_detection.process(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
