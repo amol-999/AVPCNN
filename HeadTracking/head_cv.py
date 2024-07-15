@@ -28,7 +28,7 @@ height, width = frame.shape[:2]
 
 # Initialize the sliding window and its size
 window = deque(maxlen=10)
-
+#yo
 while True:
     # Read a new frame
     ret, frame = cap.read()
